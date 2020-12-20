@@ -122,6 +122,9 @@ class MovieDB {
         article.querySelector(".description").innerHTML = data.overview || "Pas de résumé";
         article.querySelector(".duree").innerHTML = "Durée: " + data.runtime + " min";
         article.querySelector("p.revenue").innerHTML = "Revenue: " + data.revenue + " $";
+        article.querySelector("p.etoile").innerHTML = "Nombre d'étoile: " + data.vote_average;
+        article.querySelector("p.langue").innerHTML = "Langue originale: " + data.original_language;
+        article.querySelector("p.budget").innerHTML = "Budget: " + data.budget + " $";
         article.querySelector("p.date").innerHTML = "Date de sortie: " + data.release_date;
 
 
