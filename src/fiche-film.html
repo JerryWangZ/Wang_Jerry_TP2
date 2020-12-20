@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>TIMflix</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 
     <script src="js/script.js"></script>
@@ -16,9 +17,11 @@
 <header class="header-page">
     <div class="wrapper flex">
         <nav class="nav">
-            <img src="images/Popcorn.png" alt="Image Popcorn">
+            <div class="logotitre">
+                <img src="images/Popcorn.png" alt="Image Popcorn">
+                <a href="index.html"><h1>TimFlix</h1></a>
+            </div>
             <ul>
-                <li class="marque"><a href="index.html"><h1>TimFlix</h1></a></li>
                 <li><a href="index.html">Populaire</a></li>
                 <li><a href="index.html">À venir</a></li>
                 <li><a href="index.html">Contact</a></li>
@@ -28,21 +31,7 @@
     </div>
 </header>
 
-<div class="template">
-    <div class="swiper-slide">
 
-            <img src="" alt="">
-
-                <h3>Titre</h3>
-                <p class="role">role</p>
-    </div>
-
-    <div class="acteur">
-        <h3>Nom de l'acteur (à modifier)</h3>
-        <img src="images/image-temp.jpg" alt="Description de l'image (à modifier)">
-    </div>
-
-</div>
 
 <div class="wrapper">
 
@@ -70,12 +59,45 @@
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
-
-
         </div>
 
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="template">
+            <div class="swiper-slide">
+
+                <img src="" alt="">
+
+                <h3>Titre</h3>
+                <p class="role">role</p>
+            </div>
+
+     <!--       <div class="acteur">
+                <h3>Nom de l'acteur (à modifier)</h3>
+                <img src="images/image-temp.jpg" alt="Description de l'image (à modifier)">
+            </div>-->
+
+        </div>
     </main>
 
+</div>
+
+<div class="wrapper">
+    <footer>
+
+        <a href="https://www.themoviedb.org/"><img src="images/MovieDB.svg" alt="Logo MovieDB"></a>
+        <h1>Wang Jerry</h1>
+        <button id="btnScrollToTop">
+            <i class="material-icons">arrow_upward</i>
+        </button>
+
+    </footer>
 </div>
 
 </body>

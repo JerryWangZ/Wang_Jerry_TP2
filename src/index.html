@@ -5,7 +5,8 @@
     <title>TIMflix</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
 
     <link rel="stylesheet" href="css/main.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -18,9 +19,11 @@
 <header class="header-page">
     <div class="wrapper flex">
         <nav class="nav">
-            <img src="images/Popcorn.png" alt="Image Popcorn">
+            <div class="logotitre">
+                <img src="images/Popcorn.png" alt="Image Popcorn">
+                 <a href="index.html"><h1>TimFlix</h1></a>
+            </div>
             <ul>
-                <li class="marque"><a href="index.html"><h1>TimFlix</h1></a></li>
                 <li><a href="index.html">Populaire</a></li>
                 <li><a href="index.html">À venir</a></li>
                 <li><a href="index.html">Contact</a></li>
@@ -78,14 +81,17 @@
 
 </div>
 
+<div class="wrapper">
+    <footer>
 
-<footer>
-    <div class="wrapper">
-        <a href="https://www.themoviedb.org/"><img src="images/MovieDB.svg" alt="Logo MovieDB"></a>
-        <h1>Wang Jerry</h1>
-        <button>Top</button>
-    </div>
-</footer>
+            <a href="https://www.themoviedb.org/"><img src="images/MovieDB.svg" alt="Logo MovieDB"></a>
+            <h1>Wang Jerry</h1>
+            <button id="btnScrollToTop">
+                <i class="material-icons">arrow_upward</i>
+            </button>
+
+    </footer>
+</div>
 
 </body>
 </html>

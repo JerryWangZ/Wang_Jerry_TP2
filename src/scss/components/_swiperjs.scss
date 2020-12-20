@@ -12,6 +12,10 @@
   text-align: center;
   font-size: 18px;
   background: #fff;
+  position: relative;
+  img{
+    height: 100%;
+  }
 
   /* Center slide text vertically */
   display: -webkit-box;
@@ -27,11 +31,3 @@
   -webkit-align-items: center;
   align-items: center;
 }
-
-.swiper-slide{
-  position: relative;
-  img{
-    height: 100%;
-  }
-}
-

@@ -1,7 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     let connexion = new MovieDB();
-
+    const btnScrollToTop = document.querySelector("#btnScrollToTop");
+    btnScrollToTop.addEventListener("click",function (){
+        window.scrollTo({
+            top:0,
+            left:0,
+            behavior:"smooth",
+        })
+    })
 
     if(document.location.pathname.search('fiche-film.html') > 0) {
         let params = ( new URL(document.location) ).searchParams;
@@ -143,7 +150,6 @@ class MovieDB {
         requete.addEventListener("loadend", this.retourRequeteActeur.bind(this));
         requete.open("GET", this.baseUrl+'movie/'+ movieID +'/credits?api_key='+ this.apiKey+'&language=' +this.lang);
         requete.send();
-        console.log(data);
     }
 
     retourRequeteActeur(event){
@@ -157,17 +163,19 @@ class MovieDB {
     }
 
     afficheActeur(data){
-        for (let i = 0; i < data[i].length; i++) {
+        console.log(data.length);
+        for (let i = 0; i < data.length; i++) {
             let article = document.querySelector('.template>.swiper-slide').cloneNode(true);
             article.querySelector("h3").innerHTML = data[i].name;
             let image = article.querySelector('img');
-            image.src = this.imgPath + "w342" + data[i].poster_path;
+            image.src = this.imgPath + "w300" + data[i].profile_path;
             image.alt = data[i].title;
-
-
 
             document.querySelector('.swiper-wrapper').appendChild(article);
         }
     }
+
+
+
 }
 
