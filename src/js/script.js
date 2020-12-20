@@ -35,17 +35,13 @@ class MovieDB {
     }
 
     retourDernierFilm(event) {
-        console.log('retourDernierFilm')
         let target = event.currentTarget;
         let data = JSON.parse(target.responseText).results;
-
-
         this.afficherDernierFilm(data);
 
     }
 
     afficherDernierFilm(data) {
-        console.log('affiche')
 
         let section = document.querySelector('.liste-films');
         console.log(section)
@@ -81,9 +77,14 @@ class MovieDB {
     }
 
     afficheInfoFilm(data){
+
         document.querySelector("h1").innerHTML = data.title;
-        document.querySelector("p.revenue").innerHTML = data.revenue;
-        //let src = this.imgPath + "w185" + data.backdrop_path;
+        document.querySelector(".description").innerHTML = data.overview;
+        document.querySelector(".duree").innerHTML = "Durée: " + data.runtime + " min";
+        document.querySelector("p.revenue").innerHTML = "Revenue: " + data.revenue + " $";
+        document.querySelector("p.date").innerHTML = "Date de sortie: " + data.release_date;
+
+        let img = this.imgPath + "w185" + data.backdrop_path;
         console.log('afficheDernierFilm');
         this.requeteActeur(data.id)
     }

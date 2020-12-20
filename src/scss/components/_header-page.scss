@@ -1,2 +1,35 @@
 //STYLE DE NOTRE HEADER
+.header-page{
+  background-color:var(--color-black);
+  margin-bottom:50px;
 
+  .nav {
+    display: flex;
+    justify-content: center;
+  }
+  img {
+    height:70px;
+    width:70px;
+    padding-top:10px;
+    padding-bottom:10px;
+  }
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-left:0;
+
+  }
+  li {
+    padding-right:50px;
+    list-style-type: none;
+  }
+  .marque {
+    padding-right:700px;
+    color:var(--color-text-primary);
+  }
+  a {
+    color:var(--color-text-tertiary);
+  }
+}
