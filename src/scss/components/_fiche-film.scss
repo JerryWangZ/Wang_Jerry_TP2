@@ -17,3 +17,21 @@
     font-size: 20px;
   }
 }
+
+@media screen and (max-width: $vw-medium) {
+  #btnScrollToTop{
+    width:35px;
+    height:35px;
+  }
+
+  p{
+    text-align:center;
+  }
+  h1{
+    text-align:center;
+  }
+  h2{
+    text-align: center;
+  }
+
+}
