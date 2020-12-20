@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <title>TIMflix</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
 
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script src="js/script.js" defer></script>
 
@@ -29,39 +32,43 @@
 
 
 <div class="template">
+    <div class="swiper-slide">
+        <a href="">
+        <img src="" alt="">
+            <div class="overlay">
+                <h3 class="titre">Titre</h3>
+                <p class="cote">Score</p>
+            </div>
+
+        </a>
+    </div>
     <article class="film">
-        <h2>Titre du film (à modifier)</h2>
+
         <img src="images/image-temp.jpg" alt="Texte de l'image (à modifier)">
-        <div class="overlay">
+        <h1>Titre du film (à modifier)</h1>
             <p class="description">Une description du film. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
                 illum laborum non.</p>
             <p class="date">2020</p>
-            <p class="rating">rating</p>
+            <span class="rating">rating</span>
+            <br>
+            <br>
             <a href="fiche-film.html?id=284053">Voir plus d'information</a>
-        </div>
     </article>
 </div>
 
 <div class="wrapper">
-    <h1>Films Populaires</h1>
-    <div class="carrousel">
+    <h1 class="populaire">Films Populaires</h1>
 
-        <div>
-            <img src="images/image-temp.jpg" alt="Texte de l'image (à modifier)">
-            <h2>Titre du film (à modifier)</h2>
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
         </div>
 
-        <div>
-            <img src="images/image-temp.jpg" alt="Texte de l'image (à modifier)">
-            <h2>Titre du film (à modifier)</h2>
-        </div>
 
-        <div>
-            <img src="images/image-temp.jpg" alt="Texte de l'image (à modifier)">
-            <h2>Titre du film (à modifier)</h2>
-        </div>
-
-    </div>
 
     <hr>
 

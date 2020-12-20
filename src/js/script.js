@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     else {
         connexion.requeteDernierFilm();
+        connexion.requetePopulaire();
     }
 
 })
@@ -26,11 +27,49 @@ class MovieDB {
         this.nbFilm = 8;
     }
 
+    requetePopulaire() {
+        let requete = new XMLHttpRequest();
+        requete.addEventListener("loadend", this.retourPopulaire.bind(this));
+        requete.open("GET", this.baseUrl + "movie/popular?api_key=" + this.apiKey + "&language=" + this.lang + "&page=1");
+        requete.send();
+    }
+
+    retourPopulaire(event){
+        let target = event.currentTarget;
+        let data = JSON.parse(target.responseText).results;
+        this.afficherPopulaire(data);
+        console.log(data);
+    }
+
+    afficherPopulaire(data){
+       // let section = document.querySelector('.template');
+
+        for (let i = 0; i < 10; i++) {
+            let article = document.querySelector('.template>.swiper-slide').cloneNode(true);
+            article.querySelector('h3').innerHTML = data[i].title;
+            article.querySelector('p.cote').innerHTML = data[i].vote_average + '/10';
+            article.querySelector('a').href = "fiche-film.html?id=" + data[i].id;
+            let image = article.querySelector('img');
+            image.src = this.imgPath + "w1280" + data[i].backdrop_path;
+            image.alt = data[i].title;
+
+
+
+            document.querySelector('.swiper-wrapper').appendChild(article);
+        }
+        var swiper = new Swiper('.swiper-container', {
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
+    }
+
     requeteDernierFilm() {
         let requete = new XMLHttpRequest();
         requete.addEventListener("loadend", this.retourDernierFilm.bind(this));
         //requete.open("GET", "https://api.themoviedb.org/3/movie/now_playing?api_key=0c479a8fa3849ea10fb0137114f0de03&language=fr-CA&page=1");
-        requete.open("GET", this.baseUrl + "movie/now_playing?api_key=" + this.apiKey + "&language=" + this.lang + "&page=1");
+        requete.open("GET", this.baseUrl + "movie/top_rated?api_key=" + this.apiKey + "&language=" + this.lang + "&page=1");
+
         requete.send();
     }
 
@@ -48,9 +87,10 @@ class MovieDB {
 
         for (let i = 0; i < this.nbFilm; i++) {
             let article = document.querySelector('.template .film').cloneNode(true);
-            article.querySelector('h2').innerHTML = data[i].title;
-
-            article.querySelector('.description').innerHTML = data[i].overview;
+            article.querySelector('h1').innerHTML = data[i].title;
+            article.querySelector('.date').innerHTML = data[i].release_date;
+            article.querySelector('.description').innerHTML = data[i].overview  || "Description pas disponible";
+            article.querySelector('.rating').innerHTML = data[i].vote_average;
             let image = article.querySelector('img');
             image.src = this.imgPath + "w300" + data[i].poster_path;
             image.alt = data[i].title;
@@ -77,15 +117,18 @@ class MovieDB {
     }
 
     afficheInfoFilm(data){
+        let article = document.querySelector(".fiche-film")
+        article.querySelector(".titre").innerHTML = data.title;
+        article.querySelector(".description").innerHTML = data.overview || "Pas de résumé";
+        article.querySelector(".duree").innerHTML = "Durée: " + data.runtime + " min";
+        article.querySelector("p.revenue").innerHTML = "Revenue: " + data.revenue + " $";
+        article.querySelector("p.date").innerHTML = "Date de sortie: " + data.release_date;
 
-        document.querySelector("h1").innerHTML = data.title;
-        document.querySelector(".description").innerHTML = data.overview;
-        document.querySelector(".duree").innerHTML = "Durée: " + data.runtime + " min";
-        document.querySelector("p.revenue").innerHTML = "Revenue: " + data.revenue + " $";
-        document.querySelector("p.date").innerHTML = "Date de sortie: " + data.release_date;
 
-        let img = this.imgPath + "w185" + data.backdrop_path;
-        console.log('afficheDernierFilm');
+        let image = article.querySelector("img");
+        image.src = this.imgPath + "w500" + data.backdrop_path;
+        image.alt = data.title;
+
         this.requeteActeur(data.id)
     }
 

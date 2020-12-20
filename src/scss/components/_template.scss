@@ -1,3 +1,20 @@
 .template{
   display: none;
+
+}
+.liste-films{
+     text-align: center;
+  h1{
+        color:var(--color-googleplus);
+      }
+  .rating{
+    border:black 5px solid;
+    border-radius:100px;
+    padding:10px;
+    background-color:var(--color-bg-tertiary);
+  }
+  a {
+    padding-top:50px;
+    color:var(--color-text-secondary);
+  }
 }
