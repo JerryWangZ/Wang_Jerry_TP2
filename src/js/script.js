@@ -7,10 +7,12 @@ document.addEventListener("DOMContentLoaded", function () {
         let params = ( new URL(document.location) ).searchParams;
         console.log(params);
         connexion.requeteInfoFilm(params.get("id"));
+        connexion.requeteActeur(params.get("id"));
     }
     else {
         connexion.requeteDernierFilm();
         connexion.requetePopulaire();
+
     }
 
 })
@@ -112,7 +114,7 @@ class MovieDB {
     {
         let target = event.currentTarget;
         let data = JSON.parse(target.responseText);
-        console.log(target.responseText);
+       // console.log(target.responseText);
         this.afficheInfoFilm(data);
     }
 
@@ -132,20 +134,40 @@ class MovieDB {
         image.src = this.imgPath + "w500" + data.backdrop_path;
         image.alt = data.title;
 
-        this.requeteActeur(data.id)
+        // this.requeteActeur(data.id)
     }
 
     requeteActeur(movieID){
         //GET credit(movieDB)
+        let requete = new XMLHttpRequest();
+        requete.addEventListener("loadend", this.retourRequeteActeur.bind(this));
+        requete.open("GET", this.baseUrl+'movie/'+ movieID +'/credits?api_key='+ this.apiKey+'&language=' +this.lang);
+        requete.send();
+        console.log(data);
     }
 
     retourRequeteActeur(event){
         //faire attention JSON.parse
+        let target = event.currentTarget;
+        let data = JSON.parse(target.responseText).cast;
+        this.afficheActeur(data);
+        console.log(data);
+
 
     }
 
     afficheActeur(data){
+        for (let i = 0; i < data[i].length; i++) {
+            let article = document.querySelector('.template>.swiper-slide').cloneNode(true);
+            article.querySelector("h3").innerHTML = data[i].name;
+            let image = article.querySelector('img');
+            image.src = this.imgPath + "w342" + data[i].poster_path;
+            image.alt = data[i].title;
 
+
+
+            document.querySelector('.swiper-wrapper').appendChild(article);
+        }
     }
 }
 
