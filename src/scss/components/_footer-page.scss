@@ -1,7 +1,33 @@
 footer {
   display:flex;
-  justify-content: space-around;
+  justify-content: space-between;
   background:var(color-black);
+  h1{
+    font-size: 20px;
+    margin-right:60px;
+  }
+  h1:hover{
+    color:var(--color-text-secondary);
+    transition: 0.5s;
+  }
+  .media {
+    display:flex;
+    justify-content: space-around;
+  }
+  .fab{
+    font-size: 50px;
+    transition: 0.5s;
+    margin-right: 10px;
+  }
+  .fa-instagram:hover{
+    color:var(--color-instagram);
+  }
+  .fa-youtube:hover{
+    color:var(--color-youtube);
+  }
+  .fa-facebook:hover{
+    color:var(--color-facebook);
+  }
 }
 
 #btnScrollToTop{
