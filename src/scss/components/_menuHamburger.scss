@@ -1,0 +1,34 @@
+.header-page .texte3 {
+  display: flex;
+
+  list-style-type: none;
+  justify-content: space-around;
+  margin-left: auto;
+  flex-direction: row;
+  transition: all ease 1s;
+}
+.header-page .texte2 {
+   display: none;
+ }
+
+.header-page .btnHamburger {
+  display: none;
+}
+
+.header-page .texte {
+  list-style-type: none;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+
+}
+
+
+@media screen and (max-width: $vw-thin) {
+  .header-page .btnHamburger {
+
+    display: initial;
+
+  }
+
+}

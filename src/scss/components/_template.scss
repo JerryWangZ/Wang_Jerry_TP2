@@ -17,3 +17,13 @@
     color:var(--color-text-secondary);
   }
 }
+
+@media screen and (max-width: $vw-thin) {
+.liste-films{
+  .rating{
+    border-width: 3px;
+    padding:4px;
+  }
+}
+
+}
