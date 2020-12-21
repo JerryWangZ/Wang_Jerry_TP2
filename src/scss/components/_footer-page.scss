@@ -54,6 +54,10 @@ footer {
   color:var(--color-white);
   outline:none;
   cursor:pointer;
+  .material-icons{
+    display:flex;
+    justify-content: center;
+  }
 }
 
 #btnScrollToTop:hover{
@@ -67,8 +71,8 @@ footer{
 
 @media screen and (max-width: $vw-medium) {
   #btnScrollToTop{
-    width:45px;
-    height:45px;
+    width:35px;
+    height:35px;
   }
   footer{
     img{
@@ -88,8 +92,9 @@ footer{
 
   footer{
     #btnScrollToTop{
-      width:35px;
-      height:35px;
+
+      width:25px;
+      height:25px;
     }
     .fab{
       font-size: 20px;

@@ -22,10 +22,7 @@
 }
 
 @media screen and (max-width: $vw-medium) {
-  #btnScrollToTop{
-    width:35px;
-    height:35px;
-  }
+
 
   p{
     text-align:center;
@@ -45,6 +42,8 @@
 }
 
 @media screen and (max-width: $vw-thin) {
-
-
+  #btnScrollToTop{
+    width:5px;
+    height:5px;
+  }
   }
