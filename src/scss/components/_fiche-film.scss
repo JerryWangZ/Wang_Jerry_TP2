@@ -37,9 +37,14 @@
     text-align: center;
   }
 
+  .liste-acteurs{
+    display:flex;
+    justify-content: center;
+  }
+
 }
 
 @media screen and (max-width: $vw-thin) {
 
 
-}
+  }

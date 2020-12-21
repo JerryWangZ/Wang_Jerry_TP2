@@ -66,10 +66,14 @@ footer{
 }
 
 @media screen and (max-width: $vw-medium) {
-
+  #btnScrollToTop{
+    width:45px;
+    height:45px;
+  }
   footer{
     img{
       width: 80%;
+      margin-left:5px;
       margin-top:15px;
     }
     .fab{
@@ -83,6 +87,10 @@ footer{
 @media screen and (max-width: $vw-thin) {
 
   footer{
+    #btnScrollToTop{
+      width:35px;
+      height:35px;
+    }
     .fab{
       font-size: 20px;
       margin-top:5px;
