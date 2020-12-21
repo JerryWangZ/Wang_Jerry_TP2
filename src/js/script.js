@@ -67,9 +67,7 @@ class MovieDB {
             document.querySelector('.swiper-wrapper').appendChild(article);
         }
         var swiper = new Swiper('.swiper-container', {
-            pagination: {
-                el: '.swiper-pagination',
-            },
+
         });
     }
 
@@ -166,13 +164,15 @@ class MovieDB {
         console.log(data.length);
         for (let i = 0; i < data.length; i++) {
             let article = document.querySelector('.template>.swiper-slide').cloneNode(true);
-            article.querySelector("h3").innerHTML = data[i].name;
             let image = article.querySelector('img');
             image.src = this.imgPath + "w300" + data[i].profile_path;
             image.alt = data[i].title;
 
             document.querySelector('.swiper-wrapper').appendChild(article);
         }
+        var swiper = new Swiper('.swiper-container', {
+
+        });
     }
 
 

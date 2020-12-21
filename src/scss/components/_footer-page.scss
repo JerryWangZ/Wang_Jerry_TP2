@@ -79,3 +79,17 @@ footer{
   }
 
 }
+
+@media screen and (max-width: $vw-thin) {
+
+  footer{
+    .fab{
+      font-size: 20px;
+      margin-top:5px;
+    }
+    h1{
+      font-size: 15px;
+    }
+  }
+
+}
